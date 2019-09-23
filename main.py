@@ -36,9 +36,10 @@ if __name__ == "__main__":
 
 
 
+    i = 0
+    INPUT = input() # 輸入第一個密碼
+    for i in range(len(INPUT)):
 
-    while(1):
-        INPUT = input() # 輸入第一個密碼
         r1_count -= 1
         if ((ord(s1) + 1) > 90):
             s1 = chr(65)
@@ -73,7 +74,7 @@ if __name__ == "__main__":
                 s2 = chr(ord(s2) + 1)  # 轉盤1一圈後輪盤2轉動
 
 
-        step1 = (order_to_letter(letter_to_ord(s1)+letter_to_ord(INPUT)))  # 從s1開始數input的位置
+        step1 = (order_to_letter(letter_to_ord(s1)+letter_to_ord(INPUT[i])))  # 從s1開始數input的位置
         # print(step1)  # 轉盤1外圈
 
         step2 = R_rotor_list[letter_to_ord(step1)]
@@ -125,5 +126,5 @@ if __name__ == "__main__":
         # print(step13)  # 轉盤1外圈
 
         g = pos_count(s1, step13)
-        print(order_list[g])
+        print(order_list[g],end='')
 
